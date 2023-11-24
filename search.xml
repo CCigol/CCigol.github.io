@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>使用hexo+git搭建个人博客</title>
-    <url>/2023/11/23/creat_blog_test/</url>
-    <content><![CDATA[<p><img src="https://cigol-blog-images.oss-cn-qingdao.aliyuncs.com/undefined202311232235812.png" alt="桌面"></p>
-]]></content>
+    <title>datawhale-llm-学习记录</title>
+    <url>/2023/11/24/llm_datawhale_learn/</url>
+    <content><![CDATA[<h1 id="datawhale-llm学习记录"><a href="#datawhale-llm学习记录" class="headerlink" title="datawhale llm学习记录"></a>datawhale llm学习记录</h1><p>课程链接：</p>
+<p>[动手学大模型开发应用]: <a class="link"   href="https://datawhalechina.github.io/llm-universe/#/" >https://datawhalechina.github.io/llm-universe/#/<i class="fas fa-external-link-alt"></i></a>	“动手学大模型开发应用”</p>
+<h2 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h2>]]></content>
       <categories>
-        <category>差生文具多</category>
+        <category>课程记录</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>llm</tag>
+        <tag>nlp</tag>
+        <tag>datawhale</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/11/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/11/24/llm_datawhale_learn/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
