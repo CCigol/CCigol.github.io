@@ -7,7 +7,7 @@
 <p>[动手学大模型开发应用]: <a class="link"   href="https://datawhalechina.github.io/llm-universe/#/" >https://datawhalechina.github.io/llm-universe/#/<i class="fas fa-external-link-alt"></i></a>	“动手学大模型开发应用”</p>
 <p>项目地址：</p>
 <p>[动手学大模型应用开发]: <a class="link"   href="https://github.com/datawhalechina/llm-universe" >https://github.com/datawhalechina/llm-universe<i class="fas fa-external-link-alt"></i></a>	“动手学大模型应用开发”</p>
-<h2 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h2>]]></content>
+<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1>]]></content>
       <categories>
         <category>课程记录</category>
       </categories>
@@ -15,6 +15,20 @@
         <tag>llm</tag>
         <tag>nlp</tag>
         <tag>datawhale</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL-hard-262-trips and users</title>
+    <url>/2023/11/25/sql-leetcode-hard-262-Trips%20and%20Users/</url>
+    <content><![CDATA[<h1 id="SQL刷题，hard-262"><a href="#SQL刷题，hard-262" class="headerlink" title="SQL刷题，hard-262"></a>SQL刷题，hard-262</h1><p>[sql hard 262]: <a class="link"   href="https://leetcode.cn/problems/trips-and-users/description/" >https://leetcode.cn/problems/trips-and-users/description/<i class="fas fa-external-link-alt"></i></a>	“sql hard 262”</p>
+<h1 id="题目理解"><a href="#题目理解" class="headerlink" title="题目理解"></a>题目理解</h1><p>首先，先对题目做一个</p>
+]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
 </search>
