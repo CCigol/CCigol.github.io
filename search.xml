@@ -22,8 +22,21 @@
     <title>SQL-hard-262-trips and users</title>
     <url>/2023/11/25/sql-leetcode-hard-262-Trips%20and%20Users/</url>
     <content><![CDATA[<h1 id="SQL刷题，hard-262"><a href="#SQL刷题，hard-262" class="headerlink" title="SQL刷题，hard-262"></a>SQL刷题，hard-262</h1><p>[sql hard 262]: <a class="link"   href="https://leetcode.cn/problems/trips-and-users/description/" >https://leetcode.cn/problems/trips-and-users/description/<i class="fas fa-external-link-alt"></i></a>	“sql hard 262”</p>
-<h1 id="题目理解"><a href="#题目理解" class="headerlink" title="题目理解"></a>题目理解</h1><p>首先，先对题目做一个</p>
-]]></content>
+<h1 id="题目理解"><a href="#题目理解" class="headerlink" title="题目理解"></a>题目理解</h1><p>首先Trips表格中有一列为status，其为枚举类，只要不是‘completed’就要拿出来用来计数，作为未经判断过的取消订单表，再取Users表中banned为‘No’的字段，将这两个表用users_id进行求交集，就可以返回<strong>‘被司机或乘客取消的非禁止用户生成的订单数量’</strong>，然后同样的逻辑，不判断Trips表格中的status就可以返回<strong>非禁止用户生成的订单总数</strong>，这两个都按照时间排序count一下，相除就可以返回取消率。</p>
+<h1 id="尝试解法"><a href="#尝试解法" class="headerlink" title="尝试解法"></a>尝试解法</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">t4.day <span class="keyword">as</span> <span class="keyword">Day</span>,</span><br><span class="line"><span class="built_in">CAST</span>(ifNULL(t3.CancellationRate, <span class="number">0</span>)<span class="operator">*</span><span class="number">1.</span><span class="operator">/</span>t4.CancellationRate <span class="keyword">as</span> <span class="type">decimal</span>(<span class="number">8</span>,<span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;Cancellation Rate&#x27;</span></span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(<span class="keyword">select</span></span><br><span class="line">request_at <span class="keyword">as</span> <span class="keyword">Day</span>,</span><br><span class="line"><span class="built_in">count</span>(request_at) <span class="keyword">as</span> CancellationRate</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">client_id,</span><br><span class="line">driver_id,</span><br><span class="line">request_at</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">Trips</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line"><span class="keyword">EXISTS</span>(</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">  users_id</span><br><span class="line">  <span class="keyword">from</span></span><br><span class="line">  Users</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  banned <span class="operator">=</span> <span class="string">&#x27;No&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> client_id <span class="operator">=</span> users_id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">and</span> <span class="keyword">EXISTS</span>(</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">  users_id</span><br><span class="line">  <span class="keyword">from</span></span><br><span class="line">  Users</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  banned <span class="operator">=</span> <span class="string">&#x27;No&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> driver_id <span class="operator">=</span> users_id</span><br><span class="line">)</span><br><span class="line">)t1</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">request_at)t4</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">(<span class="keyword">select</span></span><br><span class="line">request_at <span class="keyword">as</span> <span class="keyword">Day</span>,</span><br><span class="line"><span class="built_in">count</span>(request_at) <span class="keyword">as</span> CancellationRate</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">client_id,</span><br><span class="line">driver_id,</span><br><span class="line">request_at</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">Trips</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">status <span class="operator">&lt;&gt;</span> <span class="string">&#x27;completed&#x27;</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">EXISTS</span>(</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">  users_id</span><br><span class="line">  <span class="keyword">from</span></span><br><span class="line">  Users</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  banned <span class="operator">=</span> <span class="string">&#x27;No&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> client_id <span class="operator">=</span> users_id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">and</span> <span class="keyword">EXISTS</span>(</span><br><span class="line">  <span class="keyword">select</span></span><br><span class="line">  users_id</span><br><span class="line">  <span class="keyword">from</span></span><br><span class="line">  Users</span><br><span class="line">  <span class="keyword">where</span></span><br><span class="line">  banned <span class="operator">=</span> <span class="string">&#x27;No&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> driver_id <span class="operator">=</span> users_id</span><br><span class="line">)</span><br><span class="line">)t2</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">request_at)t3</span><br><span class="line"><span class="keyword">on</span> t4.Day <span class="operator">=</span> t3.Day</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">t4.day <span class="keyword">in</span> (<span class="string">&#x27;2013-10-01&#x27;</span>,<span class="string">&#x27;2013-10-02&#x27;</span>,<span class="string">&#x27;2013-10-03&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cigol-blog-images.oss-cn-qingdao.aliyuncs.com/undefined202311262318771.png"
+                      alt="image-20231126231805716"
+                ></p>
+<h1 id="寻找解法时找到知识点"><a href="#寻找解法时找到知识点" class="headerlink" title="寻找解法时找到知识点"></a>寻找解法时找到知识点</h1><h2 id="join语法"><a href="#join语法" class="headerlink" title="join语法"></a>join语法</h2><p>join语法之前写起来一直报错，错误还很多，要使用join语法就按照要求将查询写出来</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> column1,column2,column3···</span><br><span class="line"><span class="keyword">from</span> (··· 一个子查询)<span class="keyword">as</span> t1</span><br><span class="line"><span class="keyword">left</span>,<span class="keyword">right</span>,<span class="keyword">inner</span>,<span class="keyword">join</span></span><br><span class="line">(··· 一个子查询) <span class="keyword">as</span> t2</span><br><span class="line"><span class="keyword">on</span> t1. <span class="operator">=</span> t2. （可以有多个）判断条件</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">等等</span><br></pre></td></tr></table></figure>
+
+<p>具体需要注意的就是子查询要给写明白写清楚，join完后可以再加where和其他判断语句。</p>
+<h2 id="EXISTS-与-NOT-EXISTS语法"><a href="#EXISTS-与-NOT-EXISTS语法" class="headerlink" title="EXISTS 与 NOT EXISTS语法"></a>EXISTS 与 NOT EXISTS语法</h2><p>判断一个字段在另一个字段中是否存在。</p>
+<h2 id="ifNULL函数的运用"><a href="#ifNULL函数的运用" class="headerlink" title="ifNULL函数的运用"></a>ifNULL函数的运用</h2><h2 id="保留小数的方法"><a href="#保留小数的方法" class="headerlink" title="保留小数的方法"></a>保留小数的方法</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>技术记录</category>
       </categories>
@@ -64,6 +77,24 @@
       <tags>
         <tag>Python</tag>
         <tag>data-mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/11/26/Algorithm_leetcode_Start/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>华为大数据HCIA工程师培训</title>
+    <url>/2023/11/26/big%20data_HCIA_HUAWEI/</url>
+    <content><![CDATA[<h1 id="华为大数据工程师培训"><a href="#华为大数据工程师培训" class="headerlink" title="华为大数据工程师培训"></a>华为大数据工程师培训</h1><p>华为大数据HCIA的学习记录。</p>
+]]></content>
+      <categories>
+        <category>课程记录</category>
+      </categories>
+      <tags>
+        <tag>Big data</tag>
+        <tag>HUAWEI</tag>
       </tags>
   </entry>
 </search>
