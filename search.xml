@@ -80,9 +80,17 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>力扣算法刷题起步</title>
     <url>/2023/11/26/Algorithm_leetcode_Start/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="力扣算法刷题起步"><a href="#力扣算法刷题起步" class="headerlink" title="力扣算法刷题起步"></a>力扣算法刷题起步</h1>]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>python</tag>
+        <tag>sql</tag>
+      </tags>
   </entry>
   <entry>
     <title>华为大数据HCIA工程师培训</title>
@@ -95,6 +103,19 @@
       <tags>
         <tag>Big data</tag>
         <tag>HUAWEI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣刷题时间轴</title>
+    <url>/2023/11/26/timeline_leetcode_list/</url>
+    <content><![CDATA[<h1 id="力扣刷题时间轴"><a href="#力扣刷题时间轴" class="headerlink" title="力扣刷题时间轴"></a>力扣刷题时间轴</h1>]]></content>
+      <categories>
+        <category>技术记录</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>python</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
 </search>
