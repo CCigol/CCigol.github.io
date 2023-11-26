@@ -7,7 +7,8 @@
 <p>[动手学大模型开发应用]: <a class="link"   href="https://datawhalechina.github.io/llm-universe/#/" >https://datawhalechina.github.io/llm-universe/#/<i class="fas fa-external-link-alt"></i></a>	“动手学大模型开发应用”</p>
 <p>项目地址：</p>
 <p>[动手学大模型应用开发]: <a class="link"   href="https://github.com/datawhalechina/llm-universe" >https://github.com/datawhalechina/llm-universe<i class="fas fa-external-link-alt"></i></a>	“动手学大模型应用开发”</p>
-<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1>]]></content>
+<h1 id="大模型简介"><a href="#大模型简介" class="headerlink" title="大模型简介"></a>大模型简介</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>对于语言模型的概述</p>
+]]></content>
       <categories>
         <category>课程记录</category>
       </categories>
@@ -29,6 +30,40 @@
       <tags>
         <tag>SQL</tag>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 编程从入门到实践 第二版 （蟒蛇书）</title>
+    <url>/2023/11/26/pytho_book_crash_course_2/</url>
+    <content><![CDATA[<h1 id="Python蟒蛇书读书记录"><a href="#Python蟒蛇书读书记录" class="headerlink" title="Python蟒蛇书读书记录"></a>Python蟒蛇书读书记录</h1><center>
+<figure>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cigol-blog-images.oss-cn-qingdao.aliyuncs.com/undefined202311261214291.png"
+                      width="300px"
+                >
+</figure>
+</center>
+
+
+
+<p>蟒蛇书是一本相当好的python学习的入门读书记录，这里把书中的章节总结后，对重点难点部分进行解释，同时结合其他的博客或者书籍中的内容对书中内容进行扩展。</p>
+<p>参考阅读时间 1周。</p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="第一章-起步"><a href="#第一章-起步" class="headerlink" title="第一章 起步"></a>第一章 起步</h2><p>每一个编程语言的起步都是搭简环境，目前工程上常用的搭简环境的方式是用anaconda来控制环境用pycharm来进行相关的编程。对于书中的sublime text，那是一个比较初级的程序编辑器，这里就不多赘述。书中的windows，macos与linux的安装环境可以了解下安装的区别。</p>
+<p>在环境安装好后，需要进一步做的就是运行hello world这个程序，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello Python World!!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>通过这一个程序可以判断安装的环境是否可以正确运行，这一点在其他多数的编程语言的安装上也有想同的体现。</p>
+<p>出现问题后可以通过多种方式去解决，如查看traceback、代码打断点一条一条的测试、删除代码文件重新编程、请求他人帮助或者自己上网搜相关的报错解决方案。</p>
+<p>平时多读一下<a class="link"   href="https://www.python.org/doc/" >python的文档<i class="fas fa-external-link-alt"></i></a>这是python的官网上的文档，有从入门到精进的所有学习路线。</p>
+]]></content>
+      <categories>
+        <category>读书记录</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>data-mining</tag>
       </tags>
   </entry>
 </search>
